@@ -156,26 +156,13 @@
         JSON.stringify(payload, null, 2);
 
       try {
-        const response = await fetch(
-          "https://hpctestdashboard.azurewebsites.net/api/icm/run",
-          {
-            method: "POST",
-
-            /*
-             * IMPORTANT:
-             * We MUST omit credentials here.
-             * Static Web App Simple Auth uses cookies, but
-             * the Azure Function is anonymous and cross-origin.
-             * Explicitly omitting credentials avoids browser CORS aborts.
-             */
-            credentials: "omit",
-
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          }
-        );
+        const response = await fetch("/api/icm/run", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
 
         const text = await response.text();
         document.getElementById("result").innerText = text;
