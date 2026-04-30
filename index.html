@@ -157,10 +157,9 @@
 
       try {
         const response = await fetch(
-          "https://hpctestdashboard.azurewebsites.net/api/icm/run",
+          "https://hpctestdashboard-fcctcfe3csdcexc4.eastus-01.azurewebsites.net/api/RunIcmMock",
           {
             method: "POST",
-            credentials: "omit",
             headers: {
               "Content-Type": "application/json"
             },
@@ -169,11 +168,13 @@
         );
 
         const text = await response.text();
-        document.getElementById("result").innerText = text;
+
+        document.getElementById("result").innerText =
+          "✅ Backend response:\n\n" + text;
       }
       catch (err) {
         document.getElementById("result").innerText =
-          "Error calling backend:\n" + err;
+          "❌ Error calling backend:\n" + err;
       }
     }
   </script>
