@@ -1,5 +1,5 @@
 {
   "globalHeaders": {
-    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://hpctestdashboard.azurewebsites.net;"
+    "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://hpctestdashboard-fcctcfe3csdcexc4.eastus-01.azurewebsites.net;"
   }
 }
